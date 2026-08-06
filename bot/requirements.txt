@@ -24,7 +24,13 @@ PyYAML
 Requests
 openai
 duckduckgo-search==6.3.6
-# pillow==11.0.0
+pillow
+pytz
+aiofiles
+pydantic
+typing_extensions
+google-generativeai
+prodia
 colorama
 chess
 python-dateutil
