@@ -30,7 +30,6 @@ aiofiles
 pydantic
 typing_extensions
 google-generativeai
-prodia
 colorama
 chess
 python-dateutil

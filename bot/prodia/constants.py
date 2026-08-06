@@ -1,0 +1,25 @@
+from enum import Enum
+
+
+class Model(Enum):
+    ELLDRETHVIVIDMIX = ("elldrethVividMix", "Elldreth Vivid Mix")
+    DELIBERATE = ("deliberate", "Deliberate v2")
+    DREAMSHAPER_6 = ("dreamshaper6", "Dreamshaper 6")
+    LYRIEL_V16 = ("lyrielV16", "Lyriel")
+    ANYTHING_V4 = ("anythingV4", "Anything Diffusion")
+    OPENJOURNEY = ("openjourney", "Openjourney")
+    REALISTICVS_V20 = ("realisticVisionV20", "Realistic Vision")
+    PORTRAIT = ("portraitPlus", "Portrait")
+    REV_ANIMATED = ("revAnimated", "Rev Animated")
+    ANALOG = ("analog", "Analog")
+    ABYSSORANGEMIX = ("abyssOrangeMix", "AbyssOrangeMix")
+    DREAMLIKE_V1 = ("dreamlikeV1", "Dreamlike v1")
+    DREAMLIKE_V2 = ("dreamlikeV2", "Dreamlike v2")
+    DREAMSHAPER_5 = ("dreamshaper5", "Dreamshaper 5")
+    MECHAMIX = ("mechaMix", "MechaMix")
+    MEINAMIX = ("meinaMix", "MeinaMix")
+    SD_V14 = ("sdV14", "Stable Diffusion v1.4")
+    SD_V15 = ("sdV15", "Stable Diffusion v1.5")
+    SBP = ("sbp", "Shonin's Beautiful People")
+    THEALLYSMIX = ("theAllysMix", "TheAlly's Mix II")
+    TIMELESS = ("timeless", "Timeless")
