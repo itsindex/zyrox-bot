@@ -340,11 +340,30 @@ keep_alive()
 from utils.tunnel import start_tunnel
 start_tunnel()
 
+# --- Health Server (keeps free hosts like Render awake) ---
+PORT = int(os.getenv("PORT", "0"))
+
+async def health_handler(request):
+    return aiohttp.web.Response(status=200, text="ok")
+
+async def start_health_server():
+    if not PORT:
+        print("\033[33m◈ Health server: PORT not set — disabled\033[0m")
+        return
+    app = aiohttp.web.Application()
+    app.router.add_get("/", health_handler)
+    app.router.add_get("/health", health_handler)
+    runner = aiohttp.web.AppRunner(app)
+    await runner.setup()
+    await aiohttp.web.TCPSite(runner, "0.0.0.0", PORT).start()
+    print(f"\033[32m◈ Health server: listening on port {PORT}\033[0m")
+
 # --- Main Bot Execution ---
 async def main():
     async with client:
         os.system("clear")
         await client.load_extension("jishaku")
+        await start_health_server()
         
         max_retries = 5
         for attempt in range(max_retries):
