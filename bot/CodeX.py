@@ -132,6 +132,8 @@ async def on_command_completion(context: commands.Context) -> None:
     split = full_command_name.split("\n")
     executed_command = str(split[0])
     webhook_url = CMD_WEBHOOK_URL
+    if not webhook_url:
+        return
     async with aiohttp.ClientSession() as session:
         webhook = discord.Webhook.from_url(webhook_url, session=session)
 
